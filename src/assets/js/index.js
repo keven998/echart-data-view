@@ -368,8 +368,8 @@ $(function() {
 		        {
 		            type: 'value',
 		            name: '线索成交率',
-		            min: 0,
-		            max: 0.4,
+		            // min: 0,
+		            // max: 0.4,
 		            interval: 50,
 		            axisLabel: {
 		                formatter: '{value}%'
@@ -378,8 +378,8 @@ $(function() {
 		        {
 		            type: 'value',
 		            name: '成交收益',
-		            min: 0,
-		            max: 5,
+		            // min: 0,
+		            // max: 5,
 		            interval: 5,
 		            axisLabel: {
 		                formatter: '{value}万'
