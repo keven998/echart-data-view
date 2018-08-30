@@ -411,12 +411,22 @@ $(function() {
 	}
 
 	function init(){
+		var changeVal = function(obj,curVal) {
+			if(curVal < 0.8){
+				curVal = 0.8;	
+			}else if(curVal >=1){
+				curVal = 1;
+			}
+			obj.val(curVal);
+			pageTwo()	
+		}
+
 		$('.header-frame').on('click','#next',function(){
 			$('#page-1').removeClass('active');
 			$('#page-2').addClass('active');
 			$(this).prop('id','pre');
 			$(this).find('.glyphicon').prop('class','glyphicon glyphicon-chevron-left');
-			$('.header-title').html('全网报价监控看板')
+			$('.header-title').html('成交率预测看板')
 			pageTwo();
 		})
 
@@ -425,7 +435,7 @@ $(function() {
 			$('#page-1').addClass('active');
 			$(this).prop('id','next');
 			$(this).find('.glyphicon').prop('class','glyphicon glyphicon-chevron-right');
-			$('.header-title').html('成交率预测看板')
+			$('.header-title').html('全网报价监控看板')
 			pageOne();
 		})
 
@@ -436,14 +446,15 @@ $(function() {
 
 		$('.filter-change-input').on('blur',function(){
 			var curVal = parseFloat($(this).val());
-			if(curVal < 0.8){
-				curVal = 0.8;	
-			}else if(curVal >=1){
-				curVal = 1;
-			}
-			$(this).val(curVal);
-			pageTwo()
+			changeVal($(this),curVal);
 		})
+
+    $(".filter-change-input").keydown(function(event) {
+    	var curVal = parseFloat($(this).val());
+      if(event.keyCode == 13) {
+        changeVal($(this),curVal);
+      }
+    });
 
 		pageOne();
 		// pageTwo();
