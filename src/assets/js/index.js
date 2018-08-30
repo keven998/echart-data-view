@@ -446,7 +446,7 @@ $(function() {
 		})
 
 		pageOne();
-		pageTwo();
+		// pageTwo();
 	}
 	init();
 });

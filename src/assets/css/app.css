@@ -109,7 +109,7 @@ body.bg04 {background-image:url("../img/bg04.png");}
 
 .wrapper{
 	opacity: 0;
-	transform:translateX(-1000px);
+	transform:translateX(-100%);
 	transition: 2s all;
 }
 .active{
