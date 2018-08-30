@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+	    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<title>全网报价监控看板</title>
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="assets/css/app.css" />
+	</head>
+	<body class="bg01">
+		<div class="canvas-bg">
+			<canvas id="anvas-bg" width="1440" height="456"></canvas>
+		</div>
+		<header class="header-frame">
+			<div class="left"><img src="./assets/img/logo.gif"/></div>
+			<div class="header">
+				<h3 class="header-title">全网报价监控看板</h3>
+			</div>
+			<div class="right-arrow" id="next">
+				<span class="s-xguide-down trans" >
+					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				</span>
+				<span class="s-xguide-down arrow-1 trans">
+					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				</span>
+			</div>
+		</header>
+		<div id="page-1" class="wrapper">
+			<div class="container-fluid">
+				<div class="row fill-h">
+					<div class="col-lg-5 fill-h">
+						<div class="xpanel-wrapper xpanel-wrapper-2">
+							<div class="xpanel">
+								<!-- 左1 -->
+								<div class="fill-h" id="flyMap"></div>
+							</div>
+						</div>
+						<div class="xpanel-wrapper xpanel-wrapper-2">
+							<div class="xpanel">
+								<!-- 左2 -->
+								<div class="fill-h" id="worldMap"></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-7 fill-h">
+						<div class="xpanel-wrapper xpanel-wrapper-1">
+							<div class="xpanel">
+								<!-- 中 -->
+								<div class="fill-h" id="scatterMap"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="page-2" class="wrapper active">
+			<div class="container-fluid fill-h">
+				<div class="row">	
+					<div class="col-lg-3 fill-h">	
+						<div class="xpanel-wrapper fill-h">
+							<div class="xpanel top-frame">
+						    <div class="top-title">平均报价折扣</div>
+						    <div class="top-num">90%</div>
+						    <div class="top-sort">
+						    	<span class="top-percent c-green">
+						    		<span class="glyphicon-arrow glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+						    		-5%
+						    	</span>
+						    	近30天折扣
+						    </div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 fill-h">	
+						<div class="xpanel-wrapper fill-h">
+							<div class="xpanel top-frame">
+						    <div class="top-title">用户线索</div>
+						    <div class="top-num">108213</div>
+						    <div class="top-sort">
+						    	<span class="top-percent c-red">
+						    		<span class="glyphicon-arrow glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+						    		30%
+						    	</span>
+						    	近30天线索
+						    </div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 fill-h">	
+						<div class="xpanel-wrapper fill-h">
+							<div class="xpanel top-frame">
+						    <div class="top-title">增量交车</div>
+						    <div class="top-num">19570</div>
+						    <div class="top-sort">
+						    	<span class="top-percent c-red">
+						    		<span class="glyphicon-arrow glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+						    		18.1%
+						    	</span>
+						    	近30天交车
+						    </div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 fill-h">	
+						<div class="xpanel-wrapper fill-h">
+							<div class="xpanel top-frame">
+						    <div class="top-title">线索成交率</div>
+						    <div class="top-num">18.1%</div>
+						    <div class="top-sort">
+						    	<span class="top-percent c-red">
+						    		<span class="glyphicon-arrow glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+						    		10%
+						    	</span>
+						    	近30天成加率
+						    </div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row fill-h-7">
+					<div class="col-lg-12 fill-h">
+						<div class="xpanel-wrapper fill-h">
+							<div class="xpanel flex-box">
+								<form class="filter-frame">
+								  <div class="form-group">
+								    <label class="bar-label" for="exampleInputEmail1">本品折扣</label>
+								    <input id="filter-change-input-1" type="email" class="form-control filter-change-input" placeholder="10%" value="0.90">
+								  </div>
+								  <div class="form-group">
+								    <label class="bar-label" for="exampleInputEmail1">竞品折扣</label>
+								    <input id="filter-change-input-2" type="email" class="form-control filter-change-input" placeholder="10%" value="0.96">
+								  </div>
+								  <div class="form-group">
+								    <label class="bar-label" for="exampleInputEmail1">外部环境</label>
+								    <input type="email" class="form-control filter-change-input" placeholder="10%" value="0.30" disabled="true">
+								  </div>
+								</form>
+								<div class="fill-h" id="lineBar"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Modal -->
+		<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+		  <div class="modal-dialog modal-lg" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="myModalLabel">模拟拟合图</h4>
+		      </div>
+		      <div class="modal-body">
+		      	<img src="./assets/img/pic_1.png"/>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		
+		<script src="assets/js/3rd/jquery-3.3.1.min.js"></script>
+		<script src="assets/js/3rd/bootstrap.min.js"></script>
+		<script src="assets/js/3rd/echarts-3.8.5.min.js"></script>
+		<script src="assets/js/3rd/echarts-map-world.js"></script>
+		<script src="assets/js/3rd/echarts-map-china.js"></script>
+		<script src="assets/js/3rd/echarts-china-provinces/jiangsu.js"></script>
+		<script src="assets/js/3rd/echarts-china-cities/jiang1_su1_su1_zhou1.js"></script>
+		<script src="assets/js/3rd/echarts-china-counties/jiang1su1_su1zhou1_kun1shan1shi4.js"></script>
+		<script src="assets/js/3rd/dark.js"></script>
+		<!-- <script src="assets/js/jquery.cxselect.min.js"></script> -->
+		<script src="./assets/js/index.js"></script>
+		<script src="./assets/js/bg.js"></script>
+	</body>
+</html>
