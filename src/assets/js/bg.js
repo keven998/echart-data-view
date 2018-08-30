@@ -1,9 +1,16 @@
 // start particle simulation
+function isPC() {
+const rule = /(iPhone|iPod|Android|ios)/i;
+if (rule.test(navigator.userAgent)) {
+  return false;
+}
+return true;
+}
 simulate(
     '2d', {
         init: function() {
 
-            this.spray(450, function() {
+            this.spray(isPC()? 450: 100, function() {
                 return [
                     null,
                     null,

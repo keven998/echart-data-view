@@ -12,8 +12,7 @@ html, body {
 	overflow-x:hidden;
 	overflow-y:auto;
 }
-body.bg01 {background-image:url("../img/bg01.png");}
-body.bg02 {background-image:url("../img/bg02.png");}
+body.bg01 {background-image:url("../img/bg01.jpg");}
 body.bg03 {background-image:url("../img/bg03.png");}
 body.bg04 {background-image:url("../img/bg04.png");}
 
@@ -74,6 +73,7 @@ body.bg04 {background-image:url("../img/bg04.png");}
 
 .header-frame{
 	position: relative;
+	z-index: 2;
 }
 .left{
     width: 110px;

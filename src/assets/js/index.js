@@ -98,14 +98,14 @@ $(function() {
 		        type: 'bar',
 		        data: [0.13,0.15,0.23,0.16,0.15,0.1,0.12,0.18],
 		        coordinateSystem: 'polar',
-		        name: '太平洋',
+		        name: '官网',
 		        stack: 'a'
 		    }],
 		    legend: {
 		        show: true,
 		        left: 0,
 		        orient: 'vertical',
-		        data: ['汽车之家', '易车', '太平洋'],
+		        data: ['汽车之家', '易车', '官网'],
 		    }
 		};
 		/***************** 中 ******************/
