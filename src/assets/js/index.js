@@ -353,10 +353,10 @@ $(function() {
 		    },
 		    toolbox: {
 		        feature: {
-		            dataView: {show: true, readOnly: false},
-		            magicType: {show: true, type: ['line', 'bar']},
-		            restore: {show: true},
-		            saveAsImage: {show: true}
+		            dataView: {show: false, readOnly: false},
+		            magicType: {show: false, type: ['line', 'bar']},
+		            restore: {show: false},
+		            saveAsImage: {show: false}
 		        }
 		    },
 		    legend: {
@@ -368,7 +368,7 @@ $(function() {
 		            data: ['整体拟合','轩逸','轩逸经典','逍客','T70','骊威'],
 		            axisPointer: {
 		                type: 'shadow'
-		            }
+		            },
 		        }
 		    ],
 		    yAxis: [
