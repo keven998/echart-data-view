@@ -1,4 +1,11 @@
 $(function() {
+  function isPC() {
+    const rule = /(iPhone|iPod|Android|ios)/i;
+    if (rule.test(navigator.userAgent)) {
+      return false;
+    }
+    return true;
+  }
 	function pageOne(){
 		/******************* 左1 ******************/
 		var pieOption = {
@@ -215,7 +222,7 @@ $(function() {
 		    visualMap: {
 		        min: 0,
 		        max: 8,
-		        calculable: true,
+		        calculable: false,
 		        inRange: {
 		            color: ['#50a3ba', '#eac736', '#d94e5d']
 		            // color: ['#ffffff', '#FF9900'],
@@ -439,11 +446,6 @@ $(function() {
 			pageOne();
 		})
 
-		$('#anvas-bg').prop({
-			height: document.body.scrollHeight,
-			width: document.body.scrollWidth,
-		})
-
 		$('.filter-change-input').on('blur',function(){
 			var curVal = parseFloat($(this).val());
 			changeVal($(this),curVal);
@@ -457,6 +459,7 @@ $(function() {
     });
 
 		pageOne();
+
 		// pageTwo();
 	}
 	init();

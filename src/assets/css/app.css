@@ -39,7 +39,7 @@ body.bg04 {background-image:url("../img/bg04.png");}
 	font-size:24px;
 	color:#fff;
 }
-.wrapper {position:absolute;top:80px;bottom:0;left:0;right:0;min-height:555px;}
+.wrapper {position:absolute;top:80px;bottom:0;left:0;right:0;min-height:555px;z-index: 2;}
 .container-fluid {height:100%;min-height:100%;}
 .row {margin-left:-7px;margin-right:-8px;}
 .row>div {padding-left:7px;padding-right:8px;}
@@ -96,10 +96,11 @@ body.bg04 {background-image:url("../img/bg04.png");}
 	padding: 20px;
 	cursor: pointer;
 }
-.canvas-bg{
+#canvas-bg{
 	position: fixed;
 	top: 0;
 	left: 0;
+	z-index: 1;
 }
 .page-hidden{
 	display: none;

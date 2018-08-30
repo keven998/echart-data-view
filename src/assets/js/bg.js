@@ -320,6 +320,7 @@ function simulate(dimensions, options) {
 
         // create
         canvas = document.createElement('canvas');
+        canvas.setAttribute('id','canvas-bg');
         document.body.appendChild(canvas);
 
         // correct canvas size on window resize
