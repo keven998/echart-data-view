@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .none{
+        display: none !important;
+    }
+    .cap5__middle{
+        position: fixed;
+        left:50%;
+        top:360px;
+        transform: translate(-50%,0);
+    }
+    .cap5__start-btn{
+        display: inline-block;
+        width:480px;
+        height:480px;
+        background: url(http://localhost:63342/chebaba/public/default/mobile/img-test/cap5/cap5-start-bg.png) no-repeat center;
+        background-size: 100%;
+        position: relative;
+        animation: rotateRun 5s linear infinite normal;
+        -moz-animation: rotateRun 5s linear infinite normal;
+        -webkit-animation: rotateRun 5s linear infinite normal;
+        -o-animation: rotateRun 5s linear infinite normal;
+    }
+    @keyframes rotateRun
+    {
+        0%   {transform: rotate(0deg);}
+        100% {transform: rotate(360deg);}
+    }
+    @-moz-keyframes rotateRun /* Firefox */
+    {
+        0%   {transform: rotate(0deg);}
+        100% {transform: rotate(360deg);}
+    }
+
+    @-webkit-keyframes rotateRun /* Safari 和 Chrome */
+    {
+        0%   {transform: rotate(0deg);}
+        100% {transform: rotate(360deg);}
+    }
+
+    @-o-keyframes rotateRun /* Opera */
+    {
+        0%   {transform: rotate(0deg);}
+        100% {transform: rotate(360deg);}
+    }
+    .cap5__start-middle{
+        display: inline-block;
+        width:352px;
+        height:352px;
+        background: url(https://jt.chebaba.com/build/default/mobile/img-test/cap5/cap5-start.png) no-repeat center;
+        background-size: 100%;
+        position: absolute;
+        left:50%;
+        top:50%;
+        transform: translate(-50%,-48%);
+    }
+    .cap5__start-content{
+        display: inline-block;
+        width:242px;
+        height:242px;
+        background: url(https://jt.chebaba.com/build/default/mobile/img-test/cap5/cap5-start-3.png) no-repeat center;
+        background-size: 100%;
+        position: absolute;
+        left:50%;
+        top:50%;
+        transform: translate(-50%,-53%);
+        z-index: 2;
+    }
+    .cap5__start-content:active{
+        width:240px;
+        height:240px;
+        background: url(https://jt.chebaba.com/build/default/mobile/img-test/cap5/cap5-start-1.png) no-repeat center;
+        background-size: 100%;
+    }
+    .cap5__scan-bg{
+        display: inline-block;
+        width:402px;
+        height:402px;
+        margin-top:40px;
+        background: url(https://jt.chebaba.com/build/default/mobile/img-test/cap5/cap5__scan-bg.png) rgba(255,255,255,0.8) no-repeat center;
+        background-size: 100%;
+        overflow: hidden;
+        position: relative;
+        border-radius: 38px;
+        transition: background .8s;
+        -moz-transition:  background .8s;
+        -webkit-transition:  background .8s;
+        -o-transition:  background .8s;
+    }
+    .cap5__scan-num{
+        background: url(https://jt.chebaba.com/build/default/mobile/img-test/cap5/cap5__scan-num.png) no-repeat center;
+        background-size: 100%;
+    }
+    .cap5__scan-line{
+        display: inline-block;
+        width:402px;
+        height:190px;
+        background: url(https://jt.chebaba.com/build/default/mobile/img-test/cap5/cap5__scan-line.png) no-repeat top center;
+        background-size: 100%;
+        position: absolute;
+        left:50%;
+        top:50%;
+        transform: translate(-50%,-48%);
+        animation: lineRun 1.2s linear infinite normal;
+        -moz-animation: lineRun 1.2s linear infinite normal;
+        -webkit-animation: lineRun 1.2s linear infinite normal;
+        -o-animation: lineRun 1.2s linear infinite normal;
+    }
+    @keyframes lineRun
+    {
+        0%   {top:123%;}
+        100% {top:23%;}
+    }
+    @-moz-keyframes lineRun /* Firefox */
+    {
+        0%   {top:123%;}
+        100% {top:23%;}
+    }
+
+    @-webkit-keyframes lineRun /* Safari 和 Chrome */
+    {
+        0%   {top:123%;}
+        100% {top:23%;}
+    }
+
+    @-o-keyframes lineRun /* Opera */
+    {
+        0%   {top:123%;}
+        100% {top:23%;}
+    }
+</style>
+<body>
+<div class="cap5__middle">
+    <div class="cap5__start-group">
+        <span class="cap5__start-btn"></span>
+        <a class="cap5__start-content"></a>
+        <i class="cap5__start-middle"></i>
+    </div>
+    <div class="cap5__scan-group none">
+       <span class="cap5__scan-bg">
+           <i class="cap5__scan-line"></i>
+       </span>
+    </div>
+</div>
+<script src="https://s.chebaba.com/3rd/jquery/1.11.2/jquery.min.js"></script>
+<script>
+    $('.cap5__start-group').on('click',function(){
+        setTimeout(function(){
+            $('.cap5__start-group').addClass('none');
+            $('.cap5__scan-group').removeClass('none');
+        },200)
+
+        var timeout = setTimeout(function(){
+            $(".cap5__scan-bg").addClass('cap5__scan-num');
+        },500)
+
+
+        setTimeout(function(){
+            console.log('1');
+        },1500)
+    })
+</script>
+</body>
+</html>
